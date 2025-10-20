@@ -1,0 +1,16 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: CashConnectAssignment
+  datasource:
+    url: jdbc:postgresql://localhost:5432/CashConnectAssignment
+    username: postgres
+    password: somerandompassword
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect

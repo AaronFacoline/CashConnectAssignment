@@ -1,0 +1,27 @@
+services:
+  postgres-db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: somerandompassword
+      POSTGRES_DB: CashConnectAssignment
+    ports:
+      - "5432:5432"
+    container_name: postgres-db
+    volumes:
+      - db:/var/lib/postgresql/data
+
+  java-app:
+    image: cash-connect-assignment-image
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8084:8084"
+    container_name: cash-connect-assignment-container
+    restart: unless-stopped
+
+volumes:
+  db:
+    driver: local

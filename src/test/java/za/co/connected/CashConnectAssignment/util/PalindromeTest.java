@@ -1,8 +1,7 @@
-package za.co.connected.CashConnectAssignment.service;
+package za.co.connected.CashConnectAssignment.util;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import za.co.connected.CashConnectAssignment.util.Palindrome;
 
 class PalindromeTest {
 
