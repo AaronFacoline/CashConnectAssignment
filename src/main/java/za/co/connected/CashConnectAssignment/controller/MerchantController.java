@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import za.co.connected.CashConnectAssignment.request.CreateMerchantRequest;
 import za.co.connected.CashConnectAssignment.response.MerchantResponse;
+import za.co.connected.CashConnectAssignment.response.MerchantTransactionsResponse;
 import za.co.connected.CashConnectAssignment.service.MerchantService;
 
 import java.util.List;
@@ -26,7 +27,7 @@ public class MerchantController {
     public ResponseEntity<MerchantResponse> createMerchant(@RequestBody CreateMerchantRequest request) {
         return ResponseEntity.ok(merchantService.createMerchant(request));
     }
-    
+
 
     @Operation(summary = "Get all merchants", description = "Retrieves a list of all merchants")
     @ApiResponse(responseCode = "200", description = "Successfully retrieved list of merchants")
@@ -35,4 +36,8 @@ public class MerchantController {
         return ResponseEntity.ok(merchantService.getAllMerchants());
     }
 
+    @GetMapping("transacations/{uuid}")
+    public ResponseEntity<MerchantTransactionsResponse> getTransaction(@PathVariable String uuid) {
+        return ResponseEntity.ok(merchantService.getMerchantTransactions(uuid));
+    }
 }

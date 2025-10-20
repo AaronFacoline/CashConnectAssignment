@@ -21,7 +21,8 @@ public class MerchantEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String uuid = UUID.randomUUID().toString();
+    @Column(unique = true)
+    private UUID uuid = UUID.randomUUID();
 
     private String name;
 

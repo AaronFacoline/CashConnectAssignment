@@ -24,7 +24,7 @@ public class TransactionsEntity {
 
     private long amount;
 
-    private long fee;
+    private double fee;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "merchant_id", nullable = false)
