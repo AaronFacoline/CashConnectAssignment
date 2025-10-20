@@ -21,6 +21,8 @@ services:
       - "8084:8084"
     container_name: cash-connect-assignment-container
     restart: unless-stopped
+    depends_on:
+      - postgres-db
 
 volumes:
   db:

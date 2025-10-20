@@ -4,7 +4,7 @@ spring:
   application:
     name: CashConnectAssignment
   datasource:
-    url: jdbc:postgresql://localhost:5432/CashConnectAssignment
+    url: jdbc:postgresql://postgres-db:5432/CashConnectAssignment
     username: postgres
     password: somerandompassword
   jpa:
